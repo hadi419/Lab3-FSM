@@ -15,7 +15,7 @@ int main(int argc, char **argv, char **env){
     // init trace dump
     Verilated::traceEverOn(true);
     VerilatedVcdC* tfp = new VerilatedVcdC;
-    top->trace (tfp, 00);
+    top->trace (tfp, 99);
     tfp->open ("f1_fsm_1s.vcd");       // open the trace file
 
     // init Vbuddy 

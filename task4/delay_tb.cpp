@@ -50,7 +50,7 @@ int main(int argc, char **argv, char **env) {
     top->n = vbdValue();
     vbdCycle(simcyc);
 
-    if (Verilated::gotFinish())  exit(0);
+    if((Verilated::gotFinish()) || (vbdGetkey() == 'q'))    exit(0);
   }
 
   vbdClose();     // ++++
