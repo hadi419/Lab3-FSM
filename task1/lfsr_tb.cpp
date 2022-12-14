@@ -38,7 +38,12 @@ int main(int argc, char **argv, char **env){
         }
 
         // send the values to Vbuddy to display 
-        vbdHex(1, top->data_out & 0xF);     // 4 bit output is shown of the 7-seg display
+        //vbdHex(1, top->data_out & 0xF);     // 4 bit output is shown of the 7-seg display
+        // modified testbench for the 7 bit PRBS generator, here are the folloewing modifications
+        vbdHex(4, (int(top->data_out) >> 16) & 0xF);   //output count values to 7-segment display every cycle
+        vbdHex(3, (int(top->data_out) >> 8) & 0xF);
+        vbdHex(2, (int(top->data_out) >> 4) & 0xF);
+        vbdHex(1, int(top->data_out) & 0xF); 
         vbdBar(top->data_out & 0xFF);       // this function shows the value of the current number or output of the current state using the led light bar. vbdBar() takes an unsigned 8-bit integer parameter between the value 0 and 255. Therefore you must mask data_out with 0xFF.
         vbdCycle(simcyc + 1);       // report the clock count at the bottom right of the screen 
 
