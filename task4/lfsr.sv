@@ -2,6 +2,8 @@ module lfsr #(
     parameter       WIDTH = 7
 )(
     input logic             clk, // internal clock
+    //input logic             rst,    // reset button
+    //input logic             en,     // enable signal as instructed in the lab discription
     output logic [WIDTH-1:0]      K    // psudo-random output
 );
 

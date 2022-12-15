@@ -5,7 +5,7 @@ module clktick #(         // module used to generate a pulse every N+1 rising ed
   input  logic             clk,      // clock 
   input  logic             rst,      // reset
   input  logic             en,       // enable signal
-  input  logic [WIDTH-1:0] N,     	 // clock divided by N+1, for Dell, it is 53 (6'd53) decimal
+  input  logic [WIDTH-1:0] N,     	 // clock divided by N+1, for Dell, it is 53 decimal
   output logic  		       tick      // tick output
 );
 
